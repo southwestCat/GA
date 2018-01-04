@@ -13,3 +13,15 @@ X = [31.281545, 121.504175;
     31.260882, 121.459690;
     31.198164, 121.431360;
     31.025406, 121.436934];
+% %%
+% axesm utm
+% Z=utmzone(X);
+% setm(gca,'zone',Z);
+% h = getm(gca);
+% R=zeros(size(X));
+% for i=1:length(X)
+%     [x,y]= mfwdtran(h,X(i,1),X(i,2));
+%     R(i,:)=[x;y];
+% end
+% figure
+% plot(R(:,1),R(:,2),'ro','linewidth',6)

@@ -1,9 +1,11 @@
-%% 画路径函数
-% 输入
-% Chrom  待画路径   
-% X      各城市坐标位置
-%%
-function DrawPath(Chrom,X)
+% h = worldmap('Asia');
+% getm(h, 'MapProj');
+% geoshow('landareas.shp','FaceColor', [0.15 0.5 0.15]);
+% geoshow('worldlakes.shp', 'FaceColor', 'cyan');
+% geoshow('worldrivers.shp','Color', 'blue');
+% geoshow(100,60,'Marker', '.','Color', 'red');
+
+
 R=[Chrom(1,:) Chrom(1,1)]; %一个随机解(个体)
 figure;
 hold on
