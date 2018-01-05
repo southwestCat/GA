@@ -2,9 +2,9 @@ clear
 clc
 close all
 %个城市坐标位置,load schoolPosition.mat
-load('schoolPosition.mat');
-NIND=8;       %种群大小
-MAXGEN=20;
+load('cityPosition.mat');
+NIND=100;       %种群大小
+MAXGEN=100;
 Pc=0.9;         %交叉概率
 Pm=0.05;        %变异概率
 GGAP=0.9;      %代沟(Generation gap)
@@ -16,7 +16,7 @@ Chrom=InitPop(NIND,N);
 DrawPath(Chrom(1,:),X)
 %% 输出随机解的路线和总距离
 disp('初始种群中的一个随机值:')
-OutputPath(Chrom(1,:));
+OutputPath(Chrom(1,:),cityName);
 Rlength=PathLength(D,Chrom(1,:));
 disp(['总距离：',num2str(Rlength)]);
 disp('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -56,6 +56,6 @@ ObjV=PathLength(D,Chrom);  %计算路线长度
 DrawPath(Chrom(minInd(1),:),X)
 %% 输出最优解的路线和总距离
 disp('最优解:')
-p=OutputPath(Chrom(minInd(1),:));
+p=OutputPath(Chrom(minInd(1),:),cityName);
 disp(['总距离：',num2str(ObjV(minInd(1)))]);
 disp('-------------------------------------------------------------')
